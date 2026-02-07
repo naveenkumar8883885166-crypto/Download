@@ -1,59 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=1920"/>
-    <meta name="description"
-          content="Tizen Download API Demo" />
-
-    <title>Tizen Download API</title>
-
-    <script type='text/javascript' src='$WEBAPIS/webapis/webapis.js'></script>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise | S. Sri Harini</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <h1>Tizen Download API</h1>
-
-    <div class="left">
-        <h2>Available buttons/actions:</h2>
-
-        <div>
-            1 - Downloaded file lists<br>
-            2 - Start download - small file<br>
-            3 - Start download - large file<br>
-            Pause - Pause download<br>
-            Play - Resume download<br>
-            Stop - Cancel download<br>
-            0 - Clear logs
+    <div id="app-container">
+        <div id="screen-intro" class="screen active">
+            <div class="card">
+                <div class="profile-frame">
+                    <img src="https://via.placeholder.com/100" alt="S. Sri Harini" class="avatar">
+                </div>
+                <h2>Happy Birthday,<br><span>S. Sri Harini</span>!</h2>
+                <p>Today is all about you. Ready for your surprise?</p>
+                <button onclick="nextScreen('screen-memories')">Let's Go! ✨</button>
+            </div>
         </div>
 
-        <div id="progress" class="progress">
-            <div id="bar" class="bar"></div>
+        <div id="screen-memories" class="screen">
+            <h3>Memories with Harini</h3>
+            <div class="gallery-grid">
+                <div class="photo-slot">📸</div>
+                <div class="photo-slot">📸</div>
+                <div class="photo-slot">📸</div>
+                <div class="photo-slot">📸</div>
+            </div>
+            <p class="sweet-note">Every moment with you is a gift!</p>
+            <button onclick="nextScreen('screen-cake')">Next Surprise 🎂</button>
         </div>
 
-        <fieldset>
-            <legend>Downloaded files:</legend>
-            <div id="fileList" class="logs"></div>
-        </fieldset>
+        <div id="screen-cake" class="screen">
+            <div class="card">
+                <div class="cake-icon">🎂</div>
+                <h2>Make a wish, Harini!</h2>
+                <p>Close your eyes and tap the button...</p>
+                <button onclick="nextScreen('screen-balloons')">Blow out Candles</button>
+            </div>
+        </div>
 
-        <fieldset>
-            <legend>Logs</legend>
-            <div id="logs" class="logs"></div>
-        </fieldset>
-    </div>
-    <div class="right">
-        <h2>Info</h2>
-
-        <p>This application demonstrates the usage of Tizen download API</p>
-
-        <p>The application downloads files from <code>http://techslides.com</code> and <code>http://download.blender.org</code>. If these domains are not accessible it will not work.<br>
-
-            You can change the source location of files to download by changing the contents of <code>url1</code> and <code>url2</code> variables in <code>main.js</code> file</cide></p>
+        <div id="screen-balloons" class="screen">
+            <h2>Pop these for a Message!</h2>
+            <div class="balloon-container" id="balloon-box"></div>
+        </div>
     </div>
 
-    <script src="main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
